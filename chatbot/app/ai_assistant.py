@@ -1,3 +1,4 @@
+import os 
 import sys
 sys.stdout.reconfigure(encoding='utf-8')
 
@@ -139,7 +140,10 @@ if __name__ == "__main__":
 
         answer = get_ai_response(household_id, question)
 
-        with open("D:/energy-ai-assistant/response.txt", "w", encoding="utf-8") as f:
+        BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+        response_path = os.path.join(BASE_DIR, "..", "response.txt")
+
+        with open(response_path, "w", encoding="utf-8") as f:
             f.write(answer)
 
         print("Done, check response.txt")

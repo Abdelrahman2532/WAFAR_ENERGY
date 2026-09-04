@@ -1,8 +1,10 @@
 
 import joblib
 import pandas as pd
+import os
 
-model = joblib.load(r"D:\energy-ai-assistant\app\consumption_model.pkl")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+model = joblib.load(os.path.join(BASE_DIR, "consumption_model.pkl"))
 
 
 tariff = {
